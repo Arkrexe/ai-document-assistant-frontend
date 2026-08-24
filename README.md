@@ -1,16 +1,91 @@
-# React + Vite
+# AI Document Assistant - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based frontend for an AI-powered document assistant that allows users to upload PDF documents, select documents, manage conversations, and ask questions about their uploaded content.
 
-Currently, two official plugins are available:
+The frontend communicates with a FastAPI backend and uses Firebase Authentication for user authentication.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Firebase email/password authentication
+- User login and registration
+- Protected application routes
+- PDF document upload
+- Uploaded document management
+- PDF preview
+- Document deletion
+- Conversation management
+- Streaming AI responses
+- Stop response generation
+- Regenerate responses
+- Markdown rendering
+- GitHub-Flavored Markdown support
+- Syntax-highlighted code blocks
+- Copy AI responses
+- Light and dark themes
+- Responsive application layout
+- User-specific authentication state
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- React
+- Vite
+- JavaScript
+- Tailwind CSS
+- React Router
+- Firebase Authentication
+- Axios
+- React Markdown
+- Remark GFM
+- React Syntax Highlighter
+- Lucide React
+- React Icons
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Application Architecture
+
+The frontend is organized into reusable components, pages, services, hooks, and authentication context.
+
+```text
+src/
+├── api/
+│   └── api.js
+│
+├── components/
+│   ├── auth/
+│   │   └── ProtectedRoute.jsx
+│   │
+│   ├── chat/
+│   │   ├── ChatInput.jsx
+│   │   ├── ChatSection.jsx
+│   │   ├── ChatWindow.jsx
+│   │   └── MessageBubble.jsx
+│   │
+│   ├── document/
+│   │   ├── DocumentCard.jsx
+│   │   └── UploadButton.jsx
+│   │
+│   └── layout/
+│       ├── Header.jsx
+│       ├── MainLayout.jsx
+│       └── Sidebar.jsx
+│
+├── context/
+│   └── AuthContext.jsx
+│
+├── hooks/
+│   └── useChat.js
+│
+├── pages/
+│   ├── Home.jsx
+│   ├── Login.jsx
+│   └── Register.jsx
+│
+├── services/
+│   ├── authService.js
+│   ├── chatService.js
+│   ├── conversationService.js
+│   └── documentService.js
+│
+├── App.jsx
+├── firebase.js
+├── index.css
+└── main.jsx
